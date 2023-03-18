@@ -1,0 +1,30 @@
+{
+	"pages": [
+		"pages/main-music/main-music",
+		"pages/main-video/main-video"
+	],
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/main-music/main-music",
+				"text": "Music",
+				"iconPath": "assets/images/tabbar/music_normal.png",
+				"selectedIconPath": "assets/images/tabbar/music_active.png"
+			},
+			{
+				"pagePath": "pages/main-video/main-video",
+				"text": "MV",
+				"iconPath": "assets/images/tabbar/video_normal.png",
+				"selectedIconPath": "assets/images/tabbar/video_active.png"
+			}
+		]
+	},
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "GP-Music",
+		"navigationBarTextStyle": "black"
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json"
+}
