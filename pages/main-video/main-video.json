@@ -1,4 +1,7 @@
 {
-	"usingComponents": {},
-	"navigationBarTitleText": "MV"
+  "navigationBarTitleText": "MV",
+  "usingComponents": {
+    "video-item": "../../components/video-item/video-item"
+  },
+  "enablePullDownRefresh": true
 }

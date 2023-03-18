@@ -1,0 +1,33 @@
+// 格式化播放数据 带单位：亿 | 万
+function formatCount(count) {
+  var numCount = parseInt(count)
+  // 判断
+  if (numCount >= 100000000) {
+    return (numCount / 100000000).toFixed(2) + "亿"
+  } else if (numCount >= 10000) {
+    return (numCount / 10000).toFixed(2) + "万"
+  } else {
+    return numCount
+  }
+}
+// 格式化时间 毫秒 
+// 前面补 0   4:25==》04:25
+function padLeft(time) {
+  time = time + ""
+  // string.slice()方法返回的是截去
+  return ("00" + time).slice(time.length)
+}
+
+// 分：秒
+function formatTime(milliseconds) {
+  var Totalseconds = milliseconds / 1000
+  var minustes = Math.floor(Totalseconds / 60)
+  var seconds = Math.floor(Totalseconds % 60)
+  return padLeft(minustes) + ":" + padLeft(seconds)
+}
+
+// 必须使用commonJS导出 module
+module.exports = {
+  formatCount: formatCount,
+  formatTime: formatTime
+}
