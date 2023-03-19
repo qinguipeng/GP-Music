@@ -1,3 +1,46 @@
 <!--pages/detail-video/detail-video.wxml-->
+
+<wxs src="../../utils/format.wxs" module="format" />
 <!-- 1.播放视频 -->
-<video class="video" danmu-list autoplay src="{{mvUrl}}" danmu-list="{{danmuList}}" />
+<video class="video" src="{{mvUrl}}" danmu-list autoplay danmu-list="{{danmuList}}" referrer-policy="origin" />
+
+<scroll-view class="scroll" scroll-y>
+	<!-- 2. 当前视频信息 -->
+	<view class="mvInfo">
+		<view class="artist">
+			<view class="artistPhoto" bindtap="onAtistTap">
+				<image src="{{mvInfo.artists[0].img1v1Url}}" mode="heightFix" />
+			</view>
+			<text class="artistName" bindtap="onAtistTap">{{mvInfo.artistName}}</text>
+		</view>
+
+		<view class="mvName">{{mvInfo.name}}</view>
+		<text class="{{isDescShowAll?'mvDescShowAll':'mvDescEllipsis'}}" bindtap="onDescTap">{{ mvInfo.desc}}</text>
+		<view class="countAndPub">
+			<text class="mvplayCount ">{{format.formatCount(mvInfo.playCount)}}次播放</text>
+			<text class="mvPublishTime">{{mvInfo.publishTime}}</text>
+		</view>
+	</view>
+	<!-- 2. 推荐视频 -->
+	<view class="recommend">
+		<view class="title">推荐视频</view>
+		<block wx:for="{{relatedVideoList}}" wx:key="vid">
+			<view class="recommendItem">
+				<view data-item="{{item}}" bindtap="onRelatedItemTap" class="left">
+					<image src="{{item.coverUrl}}" mode="widthFix" />
+					<view class="text">
+						<view class="playTime">播放量：{{format.formatCount(item.playTime)}}</view>
+						<view class="durationms">时长：{{format.formatTime(item.durationms)}}</view>
+					</view>
+				</view>
+				<view class="right">
+					<view class="desc">{{item.title}}</view>
+					<view class="creator">
+						<view class="userName">作者：{{item.creator[0].userName}}</view>
+						<view class="userId">ID：{{item.creator[0].userId}}</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</scroll-view>

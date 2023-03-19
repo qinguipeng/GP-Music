@@ -1,0 +1,5 @@
+<!--pages/detail-artist/detail-artist.wxml-->
+<view>
+	歌手主页
+	<image src="{{PhotoUrl}}" mode="" />
+</view>
