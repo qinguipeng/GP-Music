@@ -1,4 +1,5 @@
 /**app.wxss**/
 page {
-	background: #fafafa;
+	/* 默认是content-box */
+	box-sizing: border-box;
 }
