@@ -45,7 +45,7 @@
     "projectname": "miniprogram-92",
     "condition": {},
     "editorSetting": {
-        "tabIndent": "auto",
-        "tabSize": 4
+        "tabSize": 4,
+        "tabIndent": "auto"
     }
 }
