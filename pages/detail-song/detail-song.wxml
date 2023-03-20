@@ -1,0 +1,14 @@
+<!--pages/detail-song/detail-song.wxml-->
+<area-header title="推荐歌曲" hasMore="{{false}}" />
+<view class="song">
+	<block wx:for="{{songs}}" wx:key="id">
+		<view class="index">{{index + 1}}</view>
+		<view class="info">
+			<view class="name">{{item.name}}</view>
+			<view class="singer">
+				<image class="sq_icon" src="../../assets/images/icons/sq_icon.png" mode="" />{{item.ar[0].name}} {{item.ar[1].name}} {{item.ar[2].name}}
+			</view>
+		</view>
+
+	</block>
+</view>
