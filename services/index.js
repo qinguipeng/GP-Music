@@ -1,4 +1,6 @@
 
+import { baseURL } from "./config.js"
+
 // 2. 封装成一个类 ==>使用实例 发请求
 class GPRequest {
   constructor(baseURL) {
@@ -22,5 +24,7 @@ class GPRequest {
     return this.request({ ...options, method: "post" })
   }
 }
-export const gpRequest = new GPRequest("http://codercba.com:9002")
+
+export const gpRequest = new GPRequest(baseURL)
+
 

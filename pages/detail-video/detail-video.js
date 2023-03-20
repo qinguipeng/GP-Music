@@ -1,5 +1,7 @@
 // pages/detail-video/detail-video.js
 import { getMVUrl, getMVInfo, getAllvideo } from "../../services/video"
+import mvInfoStore from "../../store/mvInfoStore"
+
 Page({
   data: {
     id: 0,
@@ -37,11 +39,16 @@ Page({
     relatedVideoList: [],
   }
   , onLoad(options) {
+
     //1. 获取id
     const id = options.id
     this.setData({ id })
     // 3. mv地址
     this.fetchMVUrl()
+
+    // ==================主要为了将mvInfo保存到仓库中
+    mvInfoStore.dispatch("fetchMvInfo", this.data.id)
+    // ==================
     // 2. 获取 mv 数据 
     this.fetchMVInfo()
     // 4. 获取 相关视频
@@ -177,5 +184,10 @@ Page({
     wx.navigateTo({
       url: `../../pages/detail-artist/detail-artist`,
     })
+  }
+
+
+  , onUnload() {
+    mvInfoStore.offState('mvInfo')
   }
 })

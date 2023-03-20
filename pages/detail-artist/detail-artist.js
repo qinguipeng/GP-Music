@@ -1,14 +1,22 @@
 // pages/detail-artist/detail-artist.js
+import mvInfoStore from "../../store/mvInfoStore"
+
+
 Page({
 
     data: {
-        PhotoUrl: ''
+        mvInfo: {},
+        artist: {}
     },
     onLoad() {
-        
-        const event = this.getOpenerEventChannel();
-        event.on('getArtists', params => {
-            console.log(params);
-        });
-    }
+        mvInfoStore.onState('mvInfo', (value) => {
+            const artist = value.data.artists[0]
+            // console.log(value);
+            this.setData({
+                mvInfo: value,
+                artist
+            })
+        })
+    },
+
 })

@@ -1,0 +1,31 @@
+/* components/song-item-v1/song-item-v1.wxss */
+
+.song-item {
+	display: flex;
+	align-items: center;
+	padding: 16rpx 0;
+
+}
+
+.image {
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 10rpx;
+}
+
+.info {
+	padding-left: 30rpx;
+	flex: 1;
+}
+
+.info .name,
+.arrow {
+	font-size: 32rpx;
+	color: #555;
+}
+
+.info .singer {
+	font-size: 24rpx;
+	color: rgb(133, 128, 128);
+	padding-top: 30rpx;
+}

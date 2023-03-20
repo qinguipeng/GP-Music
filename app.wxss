@@ -1,1 +1,5 @@
 /**app.wxss**/
+page {
+	/* 默认是content-box */
+	box-sizing: border-box;
+}

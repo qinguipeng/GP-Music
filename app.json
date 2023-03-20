@@ -3,7 +3,9 @@
         "pages/main-music/main-music",
         "pages/main-video/main-video",
         "pages/detail-video/detail-video",
-        "pages/detail-artist/detail-artist"
+        "pages/detail-artist/detail-artist",
+        "pages/detail-search/detail-search",
+        "pages/detail-song/detail-song"
     ],
     "tabBar": {
         "list": [
@@ -24,7 +26,8 @@
     "window": {
         "backgroundTextStyle": "dark",
         "backgroundColor": "#fff",
-        "navigationBarBackgroundColor": "#fff",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fafafa",
         "navigationBarTitleText": "GP-Music",
         "navigationBarTextStyle": "black"
     },
