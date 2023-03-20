@@ -1,2 +1,2 @@
 <!--pages/main-music/main-music.wxml-->
-<text>pages/main-music/main-music.wxml</text>
+<van-search value="{{ shearchValue }}" shape="round" background="#4fc08d" placeholder="请输入搜索关键词" bind:click-input="onSearchClick" />
